@@ -34,17 +34,17 @@ The PAROI_GLASER worksheet allows users to build a custom composite insulating w
 
 ![Code couleur des cellules](./images/paroi_glaser.png)
 
-A maximum of six layers can be defined, with layer 1 corresponding to the interior face of the room. Materials are selected using a drop-down list that refers to the Materials sheet (see link above). This sheet is editable, allowing new materials to be added or existing ones to be modified. Each layer is assigned a thickness that must be specified. All properties of the layer are then automatically retrieved and calculated.
+A maximum of six layers can be defined, with layer 1 corresponding to the interior face of the wall. Materials are selected using a drop-down list that refers to the Materials worksheet. This worksheet is editable, allowing new materials to be added or existing ones to be modified. Each layer is assigned a thickness that must be specified. All properties of the layer are then automatically retrieved and calculated.
 
 A surface thermal resistance coefficient (Rth in m²·K/W) must be assigned to the interior and exterior surfaces, describing the resistance to convective heat transfer.
 
-It has been experimentally shown that metal sheets placed on roofs exhibit a surface temperature significantly different from the ambient air temperature: higher during the day due to solar radiation, and lower at night because of radiative exchanges with the cold sky. Thus, when a metallic material (λ > 20 W/m·K) is used on the surface, the surface temperature is considered instead of the outdoor air temperature. In this case, the thermal resistance of the exterior surface has no significant effect.
+It has been experimentally shown that metal sheets placed on roofs exhibit a surface temperature significantly different from the ambient air temperature: higher during the day due to solar radiation, and lower at night because of radiative exchanges with the cold sky. Thus, when a metallic material (λ > 20 W/m·K) is used on the surface, the surface temperature is considered instead of the outdoor air temperature. In this case, the thermal resistance of the exterior surface has no effect.
 
 When fewer than six layers are used, the remaining layers must be defined with the material named "Rien" (placed at the top of the list) and a zero thickness, as illustrated in the picture above. 
 
 ## Glaser calculation on a single time step
 
-On the PAROI-GLASER sheet, the "Date" entry, visible in the picture bellow, allows selecting a date from the climate file, extracting the boundary conditions, and then calculating the temperature and vapor gradients for that time step.
+On the PAROI-GLASER worksheet, the "Date" entry, visible in the picture bellow, allows selecting a date time from the climate file, extracting the boundary conditions, and then calculating the temperature and vapor gradients for that time step.
 
 ![Code couleur des cellules](./images/date_entry.png)
 
@@ -52,7 +52,7 @@ The gradients computed using Glaser Model are shown on the graph to the right of
 
 ![Code couleur des cellules](./images/gradients.png)
 
-On this graph, the different layers of the wall are shown in gray. The critical zone, indicated in purple, must be specified in the dedicated cells (visible in the wall definition picture). It defines a range of distances within the wall where condensation is problematic. Outside this range, condensation may be detected but will not trigger the criticality indicator.
+On this chart, the different layers of the wall are shown in gray. The critical zone, indicated in purple, must be specified in the dedicated cells (visible in the wall definition user interface picture). It defines a range of distances within the wall where condensation is an issue. Outside this range, condensation may be detected but will not trigger the criticality indicator.
 
 ## Weather data
 
@@ -80,7 +80,7 @@ The results table contains a copy of the weather conditions (outdoor and indoor)
 
 ## Edit the calculation report
 
-The RAPPORT worksheet compiles the "Critical?" column from the CALCUL_ANNEE  worksheet. The risk indicators correspond to the ratio between the number of time steps where critical condensation is detected and the total number of time steps.
+The RAPPORT worksheet compiles the "Critical?" column from the CALCUL_ANNEE worksheet. The risk indicators correspond to the ratio between the number of time steps where critical condensation is detected and the total number of time steps.
 
 Two time division tools are implemented, seasonal division and temporal division :
 
