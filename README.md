@@ -2,7 +2,7 @@
 
 ## Installation
 
-To get started, clone the repository or download one of both the Excel files:
+To get started, clone the repository or download one of both Excel files:
 
 - **glaser_predictor_open.xlsm** $\to$ an open version allowing free modification of all cells
 - **glaser_predictor_locked.xlsm** $\to$ a locked version to perform calculations without issues
