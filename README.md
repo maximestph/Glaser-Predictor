@@ -2,7 +2,10 @@
 
 ## Installation
 
-To get started, clone the repository and open the Excel file:
+To get started, clone the repository or download one of both the Excel files:
+
+- **glaser_predictor_open.xlsm** $\to$ an open version allowing free modification of all cells
+- **glaser_predictor_locked.xlsm** $\to$ a locked version to perform calculations without issues
 
 ```bash
 git clone https://github.com/maximestph/Glaser-Predictor.git
@@ -51,17 +54,57 @@ The gradients computed using Glaser Model are shown on the graph to the right of
 
 On this graph, the different layers of the wall are shown in gray. The critical zone, indicated in purple, must be specified in the dedicated cells (visible in the wall definition picture). It defines a range of distances within the wall where condensation is problematic. Outside this range, condensation may be detected but will not trigger the criticality indicator.
 
-## Climate data
+## Weather data
 
-Climate data constitute the boundary conditions for the Glaser model. They must be entered in the CLIMAT worksheet. Two climatic conditions need to be specified:
+ Weather data constitute the boundary conditions for the Glaser model. They must be entered in the CLIMAT worksheet. Two climatic conditions need to be specified:
 
 **- External conditions:** 
 
-Several locations are pre-recorded in this workbook with their associated climate conditions. However, it is possible to unlock cells to enter custom data (duration: 1 year, time step: 1 hour, i.e. 8.760 time steps).
+Several locations are pre-recorded in this workbook with their associated conditions. However, it is possible to unlock cells to enter custom data (duration: 1 year, time step: 1 hour, i.e. 8.760 time steps).
+
+![Code couleur des cellules](./images/external_cond.png)
 
 **- Internal condition :**
 
+Each pre-recorded location is associated with a set of indoor conditions obtained through Dynamic Thermal Simulations (DTS). These simulations were carried out assuming a passive building and, when relevant, an air-conditioned building at 24 °C. It is also possible to unlock cells to enter custom data. Finally, a fixed temperature as well as a specific humidity equal to that of the outdoor conditions can also be specified.
 
+![Code couleur des cellules](./images/internal_cond.png)
+
+After modifying the climate settings, it is essential to press the "Modify Climate" button for the changes to take effect.
+
+## Calculation over year
+
+The CALCUL_ANNEE worksheet allows the Glaser model to be calculated over all time steps. The "Calculate Glaser over the year" button starts this calculation.
+
+The results table contains a copy of the weather conditions (outdoor and indoor) as well as the Glaser calculation results. The columns X_min and X_max correspond to the boundaries where the vapor pressure exceeds the saturation pressure (P_v > P_sat). The "Critical?" column indicates whether the condensation is considered critical, taking into account the critical zone specified in the PAROI_GLASER sheet. Thus, condensation can be detected without being considered critical when it occurs outside this zone.
+
+## Edit the calculation report
+
+The RAPPORT worksheet compiles the "Critical?" column from the CALCUL_ANNEE  worksheet. The risk indicators correspond to the ratio between the number of time steps where critical condensation is detected and the total number of time steps.
+
+Two time division tools are implemented, seasonal division and temporal division :
+
+The year is divided into two seasons: summer and winter, with the possibility to modify the transition dates. To study a specific month, simply set the season start date to the 1st day and the season end date to the 31st day of that month.
+
+Each day is divided into two periods, labeled "day" and "night," with the possibility to modify the transition hours. Similarly to the seasonal analysis, it is possible to study nightfall by specifying the start of day at 6 PM and the start of night at 8 PM.
+
+The combined risk allows associating the seasonal and daily analyses to determine when during the year and day the risk of condensation is the highest.
+
+Finally, the commentary zone allows to freely add notes.
+
+![Code couleur des cellules](./images/report_header.png)
+
+Under this header, various psychrometric charts display the critical outdoor conditions over the year, as well as according to the seasonal and daily divisions.
+
+![Code couleur des cellules](./images/psychro.png)
+
+The "Export PDF" button in the report header allows saving the RAPPORT sheet in PDF format. You will be prompted to select the pages to export.
+
+![Code couleur des cellules](./images/export.png)
+
+## Materials
+
+The Materials sheet allows adding or modifying the database used for the Glaser calculation. To add a new material, a new row must be inserted.
 
 
 
