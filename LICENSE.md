@@ -20,4 +20,3 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 The author accepts no responsibility for any direct or indirect consequences arising from the use of this work, including technical, scientific, or industrial decisions. Results, data, and calculations are provided for informational purposes only and may include uncertainties.
 
 **Use at your own risk and responsibility.**
-
