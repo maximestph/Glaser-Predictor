@@ -18,9 +18,6 @@ This Excel file was developed as part of the ISORHUM project within the OMBREE p
 
 This workbook offers an a priori prediction of condensation risks over one year within an insulating wall, using the Glaser model.
 
-![video](./images/gradients.mp4)
-
-
 The Glaser model is limited to describing the steady-state regime, unlike coupled heat, air, and moisture (HAM) models, which account for transient phenomena. This limitation should be considered, especially when two layers with high resistance to water vapor diffusion are stacked. In such cases, wall desorption is delayed, preventing the rapid attainment of the steady-state regime.
 
 This document in no way replaces official reference texts, whether regulatory (laws, decrees, orders, etc.), normative (standards, DTUs, professional rules, RAGE and PACTE recommendations, or calculation rules), or codified (technical approvals, technical specifications guides, etc.), which must be consulted. The CSTB declines all responsibility for any direct or indirect consequences of any kind that may result from any misinterpretation of the content of this document.
